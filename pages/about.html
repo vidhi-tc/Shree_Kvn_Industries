@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Shri KVN Industries</title>
+
+    <link href="/Assests/shri.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+      background: #e0e7f1;
+      color: #333;
+      margin: 0;
+      position: relative;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+.custom-padding {
+    padding-top: -90px;  /* Adjust this value to increase or decrease the top padding */
+}
+
+/* Remove extra padding from the h1 or section below */
+.custom-header {
+    margin-top: 0; /* Ensure there's no extra margin */
+    padding-top: 0; /* Remove any padding at the top */
+}
+
+/* General Reset for Section Margins */
+section {
+    margin: 0 auto; /* Remove margin issues between sections */
+}
+
+/* Adjust the alignment and spacing of the navbar */
+.navbar {
+    margin-bottom: 0; /* Prevents extra space below the navbar */
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #130b6d;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-top: 10px;
+    color: #0084ff;
+}
+
+/* About Us Section */
+.about-us-section {
+   
+    padding: 20px -10px;
+}
+
+.about-us-section h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.about-us-section p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Mission, Vision, Values */
+.mission-vision-values {
+    padding: 50px 20px;
+}
+
+.mission-vision-values .card {
+    border: none;
+   
+    transition: transform 0.3s ease;
+}
+
+.mission-vision-values .card:hover {
+    transform: scale(1.05);
+}
+
+.mission-vision-values img {
+    margin-bottom: 15px;
+}
+
+.mission-vision-values h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+    padding: 50px 20px;
+   
+}
+
+.why-choose-us h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.feature-box {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature-box h4 {
+    color: #007bff;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+/* Custom Header Styling */
+.custom-header {
+    font-size: 3rem; /* Large, prominent text */
+    font-weight: bold; /* Make the text stand out */
+    text-align: center; /* Center-align the text */
+    color: #007bff; /* Eye-catching blue color */
+    text-transform: uppercase; /* Capitalize all letters */
+    letter-spacing: 2px; /* Add spacing between letters */
+    margin-bottom: 30px; /* Add space below the header */
+    position: relative; /* Needed for ::before and ::after */
+}
+
+.custom-header::before,
+.custom-header::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: #007bff;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-header::before {
+    left: 0;
+}
+
+.custom-header::after {
+    right: 0;
+}
+
+.custom-header:hover {
+    color: #0056b3; /* Slightly darker blue on hover */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
+}
+.bokeh-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    /* Individual bokeh light */
+    .bokeh {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgb(7, 65, 255);
+      border-radius: 100%;
+      animation: floatBokeh 3s infinite ease-in-out;
+      filter: blur(3px);
+      opacity: 0.25;
+    }
+
+    /* Bokeh animation */
+    @keyframes floatBokeh {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+      }
+      25% {
+        opacity: 0.5;
+      }
+      50% {
+        transform: translate(calc(100vw - 50%), -100vh) scale(1.5);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translate(calc(-100vw), calc(100vh)) scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    .container {
+  background-color: transparent; /* Ensures no background color is applied */
+}
+
+.mission-vision-values {
+  background-color: white; /* Or your desired color, if bg-light is undesired */
+}
+
+
+</style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Assests/style.css"> <!-- Link to your external CSS file -->
+</head>
+<body>
+    <!-- Top Header for Contact Info -->
+    <header>
+        <!-- Top Header for Contact Info -->
+        <!-- Top Header for Contact Info -->
+        <div class="top-header">
+            <span>
+                <i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a>
+                <i class="fa fa-envelope"></i> Email: <a href="mailto:customercare@shrikvnindustries.com">shrikvnindustries@gmail.com</a>
+            </span>
+        </div>
+        
+    
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="/Assests/shreekvnlogo-08.png" alt="Shri Kvn Industries Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/about.html">About Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                                <li><a class="dropdown-item" href="/pages/plain.html">Plain Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/printed.html">Printed Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/vented.html">Vented Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/plastic.html">Plastic Seals</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/service.html">Service</a></li>
+                     
+                        <li class="nav-item"><a class="nav-link" href="/pages/contact.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./broucher.html" id="brochure-link">Brochure</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+<br><br><br>
+
+
+<img src="../Assests/zin.png" alt="Decorative Background" class="background-image-1">
+<img src="/Assests/zin2.png" alt="Decorative Background" class="background-image-2">
+<img src="/Assests/zin3.png" alt="Decorative Background" class="background-image-3">
+<img src="/Assests/zin4.png" alt="Decorative Background" class="background-image-4">
+<img src="/Assests/zin1.jpg" alt="Decorative Background" class="background-image-5">
+
+<div class="bokeh-container" id="bokeh-container"></div>
+<div class="bokeh-container" id="bokeh-container"></div>
+    
+<div class="bokeh-container" id="bokeh-container"></div>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container text-center py-5">
+            <h1 class="display-4 fw-bold ">About Shri KVN Industries</h1>
+            <p class="lead">Delivering Excellence in Drum Cap Sealing Solutions</p>
+        </div>
+    </div>
+   
+
+    <!-- About Us Content -->
+    <section class="about-us-section py-5 custom-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Who We Are</h2>
+                    <p>Shri KVN Industries is a leader in the manufacturing and export of high-quality drum cap seals. Based in the industrial hub of Ankleshwar, Gujarat, we are proud to serve clients across diverse industries such as chemicals, pharmaceuticals, food & beverages, and more.</p>
+                    <p>Our mission is to provide world-class sealing solutions that ensure the safety, integrity, and security of your products during storage and transportation. With years of experience and a commitment to quality, we strive to build lasting relationships with our clients globally.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="/Assests/shreekvnlogo-08.png" alt="About Shri KVN Industries" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section class="why-choose-us py-5">
+        <div class="container">
+            <h2 class="text-center mb-5"></h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <img src="Assests/high-quality.png" alt="High Quality" class="img-fluid mb-3" width="80">
+                        <h4>Our Mission</h4>
+                        <p>To revolutionize drum packaging with innovative, reliable, and sustainable sealing solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <img src="Assests/customer-service.png" alt="Customer Service" class="img-fluid mb-3" width="80">
+                        <h4>Our Vision</h4>
+                        <p>To become a globally recognized leader in drum cap sealing technology.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <img src="Assests/global-presence.png" alt="Global Presence" class="img-fluid mb-3" width="80">
+                        <h4>Our Values</h4>
+                        <p>Integrity, innovation, and customer-centricity guide every action we take to achieve excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Shri KVN Industries?</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <img src="Assests/high-quality.png" alt="High Quality" class="img-fluid mb-3" width="80">
+                        <h4>High-Quality Products</h4>
+                        <p>We use premium materials and state-of-the-art processes to ensure unmatched quality.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <img src="Assests/customer-service.png" alt="Customer Service" class="img-fluid mb-3" width="80">
+                        <h4>Exceptional Customer Service</h4>
+                        <p>Our dedicated team provides tailored solutions and support to meet your unique needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <img src="Assests/global-presence.png" alt="Global Presence" class="img-fluid mb-3" width="80">
+                        <h4>Global Reach</h4>
+                        <p>We serve clients worldwide with an extensive network and timely delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <section class="enquiry-section">
+        <h2 class="enquiry-title">Quick Enquiry</h2>
+        <form class="enquiry-form">
+            <div class="form-group">
+                <input type="text" placeholder="Product / Service Looking For">
+                <input type="text" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email">
+                <select>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                    <!-- Add other countries as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="+91">
+                <input type="text" placeholder="Phone / Mobile">
+            </div>
+            <textarea placeholder="Leave a Message for us"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <br>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+
+                
+                <!-- Quick Contact -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <h4 class="footer-title">Quick Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa fa-building"></i> SHRI KVN INDUSTRIES</li>
+                        <li><i class="fa fa-user"></i> Mr. Karan </li>
+                        <li><i class="fa fa-map-marker"></i>Plot No-A-6,Kamdhenu Industrial Park-4, Block/Survey,No.686,Jitali,Bharuch,393002</li>
+                        <li><i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a></li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:customercare@shrikvnindustries.com">customercare@shrikvnindustries.com</a></li>
+                        
+                    </ul>
+                </div>
+    
+                <!-- General Links -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <h4 class="footer-title">General Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                       
+                        <li><a href="/pages/contact.html">Contact Us</a></li>
+                        <li><a href="/pages/about.html">About Us</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="/pages/broucher.html">Brochure</a></li>
+                        <li><a href="#">Site Map</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Products -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <h4 class="footer-title">Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="/pages/plain.html">Plain Cap Seal</a></li>
+                        <li><a href="/pages/printed.html">Printed Cap Seal</a></li>
+                        <li><a href="/pages/vented.html">Vented Cap Seal</a></li>
+                        <li><a href="#">Plastic Cap Seal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+    
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                <p>All Rights Reserved. <strong>Shree KVN Industries </strong></p>
+                <p>Developed & Managed by <a href="#">Shri Kvn Industries</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/Assests/scripts.js"></script>
+
+    <script>
+        function createBokehLights() {
+          const container = document.getElementById('bokeh-container');
+          const numBokeh = 30; // Number of bokeh lights
+          for (let i = 0; i < numBokeh; i++) {
+            const bokeh = document.createElement('div');
+            bokeh.classList.add('bokeh');
+            bokeh.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+            bokeh.style.top = `${Math.random() * 100}vh`; // Random vertical position
+            bokeh.style.animationDelay = `${Math.random() * 4}s`; // Random animation delay
+            bokeh.style.animationDuration = `${6 + Math.random() * 4}s`; // Random duration for smoothness
+            container.appendChild(bokeh);
+          }
+        }
+        createBokehLights();
+      </script>
+    
+    
+</body>
+</html>
