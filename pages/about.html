@@ -3,102 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Shri KVN Industries</title>
+    <title>Product Page - Shri KVN Industries</title>
 
-    <link href="/Assests/shri.png" rel="icon">
-  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <style>
-   body {
-      font-family: 'Roboto', sans-serif;
-      background: #e0e7f1;
-      color: #333;
-      margin: 0;
-      position: relative;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-.custom-padding {
-    padding-top: -90px;  /* Adjust this value to increase or decrease the top padding */
+    <!-- External CSS and Font Links -->
+       <link rel="stylesheet" href="../Assests/style.css"> <!-- Link to your external CSS file -->
+       <link rel="stylesheet" href="../Assests/style.css">
+       <link rel="stylesheet" href="../Assests/scripts.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            padding-top: 110px; /* Prevent overlap with fixed navbar */
+            background-color: #f8f9fa;
+        }
+
+        header {
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fix the header at the top */
+  top: 0;
+  z-index: 1030; /* Ensure it stays above all other elements */
+  background-color: #ffffff;
 }
 
-/* Remove extra padding from the h1 or section below */
-.custom-header {
-    margin-top: 0; /* Ensure there's no extra margin */
-    padding-top: 0; /* Remove any padding at the top */
+/* Top Header */
+.top-header {
+  background-color: #000141;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
 }
 
-/* General Reset for Section Margins */
-section {
-    margin: 0 auto; /* Remove margin issues between sections */
+.top-header a {
+  color: #f8f9fa;
+  text-decoration: none;
 }
 
-/* Adjust the alignment and spacing of the navbar */
+/* Logo and Navbar Container */
+/* Logo and Navbar Container */
+.logo-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align logo to left and toggler to right */
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+}
+
+.navbar-logo {
+  flex-shrink: 0; /* Ensure the logo does not shrink */
+}
+
+.navbar-logo img {
+  max-height: 80px; /* Adjusted to balance size and responsiveness */
+  width: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  opacity: 0.85; /* Slight fade effect */
+}
+
+/* Responsive Design for Logo */
+@media (max-width: 768px) {
+  .navbar-logo img {
+    max-height: 70px; /* Adjusted for smaller screens */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the logo fits neatly */
+    padding: 5px; /* Add padding for spacing if necessary */
+  }
+}
+
+/* Navbar */
 .navbar {
-    margin-bottom: 0; /* Prevents extra space below the navbar */
+  flex-grow: 1;
+  padding: 0; /* Remove default padding */
 }
 
+/* Toggler Button */
+.navbar-toggler {
+  position: absolute;
+  right: 20px; /* Fixed to the right corner */
+  top: 50%; /* Centered vertically */
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: #04054c; /* Consistent with theme */
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  background-color: #0056b3; /* Slightly darker on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+  transform: rotate(180deg); /* Rotate effect */
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  margin: 0 12px; /* Slightly increased margin for better spacing */
+  color: #333333;
+  font-size: 16px; /* Increased font size for readability */
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d0f94; /* Changed hover color for better visibility */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.navbar-nav .btn-primary {
+  background-color: #0d0f94;
+  color: #ffffff;
+  border-radius: 25px;
+  padding: 6px 18px; /* Adjusted padding for a sleek look */
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .btn-primary:hover {
+  background-color: #ffffff;
+  color: #0d0f94;
+  border: 2px solid #0d0f94; /* Added border for hover effect */
+  transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo-navbar {
+    flex-direction: row; /* Maintain row alignment for logo and toggler */
+    justify-content: space-between; /* Keep logo and toggler at corners */
+    padding: 10px 15px; /* Reduced padding for smaller screens */
+  }
+
+  .navbar-toggler {
+    position: relative; /* Reset positioning for mobile */
+    right: 0; /* Align correctly */
+    transform: none;
+    margin-top: 0;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    flex-direction: column; /* Stack links vertically */
+    padding-top: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 8px 0; /* Increased spacing between links */
+  }
+
+  /* Improved Logo Styling */
+  .navbar-logo img {
+    max-height: 60px; /* Adjusted for smaller screens */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the logo fits neatly */
+    padding: 5px; /* Add padding for spacing */
+  }
+}
+        .navbar-brand img {
+            max-height: 70px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+            opacity: 0.85;
+        }
+        .footer {
+    background-color: #004f6e;
+    padding: 20px 0;
+    color: #f8f9fa;
+}
+
+
+/* Hero Section */
 .hero-section h1 {
     font-size: 3rem;
     font-weight: bold;
     color: #130b6d;
+    transition: color 0.3s ease;
+}
+
+.hero-section h1:hover {
+    color: #0056b3;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .hero-section p {
     font-size: 1.25rem;
     margin-top: 10px;
     color: #0084ff;
+    transition: transform 0.3s ease;
+}
+
+.hero-section p:hover {
+    transform: scale(1.05);
 }
 
 /* About Us Section */
 .about-us-section {
-   
-    padding: 20px -10px;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.about-us-section:hover {
+    transform: translateY(-5px);
 }
 
 .about-us-section h2 {
     font-size: 2rem;
     color: #007bff;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.about-us-section h2:hover {
+    color: #0056b3;
 }
 
 .about-us-section p {
     margin-bottom: 15px;
     color: #555;
+    line-height: 1.8;
+    transition: color 0.3s ease;
 }
 
-/* Mission, Vision, Values */
+.about-us-section p:hover {
+    color: #333;
+}
+
+/* Mission, Vision, Values Section */
 .mission-vision-values {
     padding: 50px 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.mission-vision-values:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .mission-vision-values .card {
     border: none;
-   
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .mission-vision-values .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .mission-vision-values img {
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.mission-vision-values img:hover {
+    transform: rotate(5deg) scale(1.1);
 }
 
 .mission-vision-values h3 {
     font-size: 1.5rem;
     color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.mission-vision-values h3:hover {
+    color: #0056b3;
 }
 
 /* Why Choose Us */
 .why-choose-us {
     padding: 50px 20px;
-   
+    background-color: #f8f9fa;
+    border-radius: 10px;
 }
 
 .why-choose-us h2 {
     font-size: 2rem;
     color: #007bff;
     margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 .feature-box {
@@ -111,24 +323,119 @@ section {
 
 .feature-box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .feature-box h4 {
     color: #007bff;
     font-size: 1.25rem;
     margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
+
+.feature-box h4:hover {
+    color: #0056b3;
+}
+/* Enquiry Section */
+
+
+.enquiry-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.enquiry-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.enquiry-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.enquiry-form .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+}
+
+.enquiry-form input, .enquiry-form select, .enquiry-form textarea {
+    width: calc(48% - 10px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+}
+
+.enquiry-form textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.enquiry-form input:focus, .enquiry-form select:focus, .enquiry-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.enquiry-form button {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    background-color: #0e0451;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center;
+}
+
+.enquiry-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .enquiry-form input, .enquiry-form select, .enquiry-form textarea {
+        width: 100%;
+    }
+
+    .enquiry-form .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .enquiry-form button {
+        width: 100%;
+        max-width: none;
+    }
+}
+
 /* Custom Header Styling */
 .custom-header {
-    font-size: 3rem; /* Large, prominent text */
-    font-weight: bold; /* Make the text stand out */
-    text-align: center; /* Center-align the text */
-    color: #007bff; /* Eye-catching blue color */
-    text-transform: uppercase; /* Capitalize all letters */
-    letter-spacing: 2px; /* Add spacing between letters */
-    margin-bottom: 30px; /* Add space below the header */
-    position: relative; /* Needed for ::before and ::after */
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    position: relative;
 }
 
 .custom-header::before,
@@ -137,7 +444,7 @@ section {
     position: absolute;
     width: 80px;
     height: 3px;
-    background-color: #007bff;
+    background-color: #091167;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -151,112 +458,186 @@ section {
 }
 
 .custom-header:hover {
-    color: #0056b3; /* Slightly darker blue on hover */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
-}
-.bokeh-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    /* Individual bokeh light */
-    .bokeh {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: rgb(7, 65, 255);
-      border-radius: 100%;
-      animation: floatBokeh 3s infinite ease-in-out;
-      filter: blur(3px);
-      opacity: 0.25;
-    }
-
-    /* Bokeh animation */
-    @keyframes floatBokeh {
-      0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.3;
-      }
-      25% {
-        opacity: 0.5;
-      }
-      50% {
-        transform: translate(calc(100vw - 50%), -100vh) scale(1.5);
-        opacity: 0.7;
-      }
-      100% {
-        transform: translate(calc(-100vw), calc(100vh)) scale(0.8);
-        opacity: 0;
-      }
-    }
-
-    .container {
-  background-color: transparent; /* Ensures no background color is applied */
-}
-
-.mission-vision-values {
-  background-color: white; /* Or your desired color, if bg-light is undesired */
+    color: #0056b3;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 
-</style>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/Assests/style.css"> <!-- Link to your external CSS file -->
+
+.footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 1em;
+            color: #666;
+            margin: 0 0 15px;
+        }
+
+        .product-card .view-more {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .product-card .view-more:hover {
+            background-color: #004f6e;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .highlight-section {
+                flex-direction: column;
+            }
+
+            .product-card img {
+                height: 150px;
+            }
+
+            .product-card h3 {
+                font-size: 1.1em;
+            }
+
+            .product-card p {
+                font-size: 0.9em;
+            }
+
+            .product-card .view-more {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+        }
+
+        
+/* Footer Section */
+.footer-section {
+    background-color: #000141;
+    color: #f8f9fa;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-title {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f8f9fa;
+    padding-bottom: 8px;
+}
+
+.footer-contact,
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact li,
+.footer-links li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #f8f9fa;
+}
+
+.footer-contact li i {
+    margin-right: 8px;
+}
+
+.footer-links li a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+.footer-links li a:hover {
+    color: #ddd;
+}
+
+    </style>
 </head>
 <body>
-    <!-- Top Header for Contact Info -->
-    <header>
-        <!-- Top Header for Contact Info -->
-        <!-- Top Header for Contact Info -->
-        <div class="top-header">
-            <span>
-                <i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a>
-                <i class="fa fa-envelope"></i> Email: <a href="mailto:customercare@shrikvnindustries.com">shrikvnindustries@gmail.com</a>
-            </span>
-        </div>
-        
-    
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="/Assests/shreekvnlogo-08.png" alt="Shri Kvn Industries Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/pages/about.html">About Us</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Products
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                                <li><a class="dropdown-item" href="/pages/plain.html">Plain Seals</a></li>
-                                <li><a class="dropdown-item" href="/pages/printed.html">Printed Seals</a></li>
-                                <li><a class="dropdown-item" href="/pages/vented.html">Vented Seals</a></li>
-                                <li><a class="dropdown-item" href="/pages/plastic.html">Plastic Seals</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="/pages/service.html">Service</a></li>
-                     
-                        <li class="nav-item"><a class="nav-link" href="/pages/contact.html">Contact Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./broucher.html" id="brochure-link">Brochure</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-<br><br><br>
 
+<!-- Header -->
+<header>
+  <!-- Top Header -->
+  <div class="top-header">
+    <span>
+      <i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a>
+      <i class="fa fa-envelope"></i> Email: <a href="mailto:customercare@shrikvnindustries.com">shrikvnindustries@gmail.com</a>
+    </span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="/Assests/shreekvnlogo-08.png" alt="Shri KVN Industries Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="//pages/about.html">About Us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+              <li><a class="dropdown-item" href="/pages/plain.html">Plain Seals</a></li>
+              <li><a class="dropdown-item" href="/pages/printed.html">Printed Seals</a></li>
+              <li><a class="dropdown-item" href="/pages/vented.html">Vented Seals</a></li>
+              <li><a class="dropdown-item" href="/pages/plastic.html">Plastic Seals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/pages/service.html">Service</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pages/contact.html">Contact Us</a></li>
+          <li class="nav-item">
+            <a class="btn btn-primary nav-link" href="/pages/broucher.html" id="brochure-link">Brochure</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
 <img src="../Assests/zin.png" alt="Decorative Background" class="background-image-1">
 <img src="/Assests/zin2.png" alt="Decorative Background" class="background-image-2">
@@ -380,82 +761,66 @@ section {
             <button type="submit">Send Message</button>
         </form>
     </section>
-
-    <br>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
 
-                
-                <!-- Quick Contact -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <h4 class="footer-title">Quick Contact</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fa fa-building"></i> SHRI KVN INDUSTRIES</li>
-                        <li><i class="fa fa-user"></i> Mr. Karan </li>
-                        <li><i class="fa fa-map-marker"></i>Plot No-A-6,Kamdhenu Industrial Park-4, Block/Survey,No.686,Jitali,Bharuch,393002</li>
-                        <li><i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a></li>
-                        <li><i class="fa fa-envelope"></i> <a href="mailto:customercare@shrikvnindustries.com">customercare@shrikvnindustries.com</a></li>
-                        
-                    </ul>
-                </div>
-    
-                <!-- General Links -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <h4 class="footer-title">General Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../index.html">Home</a></li>
-                       
-                        <li><a href="/pages/contact.html">Contact Us</a></li>
-                        <li><a href="/pages/about.html">About Us</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="/pages/broucher.html">Brochure</a></li>
-                        <li><a href="#">Site Map</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Products -->
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <h4 class="footer-title">Products</h4>
-                    <ul class="footer-links">
-                        <li><a href="/pages/plain.html">Plain Cap Seal</a></li>
-                        <li><a href="/pages/printed.html">Printed Cap Seal</a></li>
-                        <li><a href="/pages/vented.html">Vented Cap Seal</a></li>
-                        <li><a href="#">Plastic Cap Seal</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-    
-            <!-- Copyright -->
-            <div class="footer-copyright">
-                <p>All Rights Reserved. <strong>Shree KVN Industries </strong></p>
-                <p>Developed & Managed by <a href="#">Shri Kvn Industries</a></p>
-            </div>
-        </div>
-    </footer>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="/Assests/scripts.js"></script>
 
-    <script>
-        function createBokehLights() {
-          const container = document.getElementById('bokeh-container');
-          const numBokeh = 30; // Number of bokeh lights
-          for (let i = 0; i < numBokeh; i++) {
-            const bokeh = document.createElement('div');
-            bokeh.classList.add('bokeh');
-            bokeh.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-            bokeh.style.top = `${Math.random() * 100}vh`; // Random vertical position
-            bokeh.style.animationDelay = `${Math.random() * 4}s`; // Random animation delay
-            bokeh.style.animationDuration = `${6 + Math.random() * 4}s`; // Random duration for smoothness
-            container.appendChild(bokeh);
-          }
-        }
-        createBokehLights();
-      </script>
-    
-    
-</body>
-</html>
+<!-- Footer -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="row">
+  
+            
+            <!-- Quick Contact -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <h4 class="footer-title">Quick Contact</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa fa-building"></i> SHRI KVN INDUSTRIES</li>
+                    <li><i class="fa fa-user"></i> Mr. Karan </li>
+                    <li><i class="fa fa-map-marker"></i>Plot No-A-6,Kamdhenu Industrial Park-4, Block/Survey,No.686,Jitali,Bharuch,393002</li>
+                    <li><i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a></li>
+                    <li><i class="fa fa-envelope"></i> <a href="mailto:customercare@shrikvnindustries.com">customercare@shrikvnindustries.com</a></li>
+                    
+                </ul>
+            </div>
+  
+            <!-- General Links -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <h4 class="footer-title">General Links</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                   
+                    <li><a href="/pages/contact.html">Contact Us</a></li>
+                    <li><a href="/pages/about.html">About Us</a></li>
+                    <li><a href="/pages/service.html">Service</a></li>
+                    <li><a href="/pages/broucher.html">Brochure</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+  
+            <!-- Products -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <h4 class="footer-title">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="/pages/plain.html">Plain Cap Seal</a></li>
+                    <li><a href="/pages/printed.html">Printed Cap Seal</a></li>
+                    <li><a href="/pages/vented.html">Vented Cap Seal</a></li>
+                    <li><a href="/pages/plastic.html">Plastic Cap Seal</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+  
+          <!-- Copyright -->
+          <div class="footer-copyright">
+              <p>All Rights Reserved. <strong>Shree KVN Industries </strong></p>
+              <p>Developed & Managed by <a href="#">Kvn Industries</a></p>
+          </div>
+      </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
+  

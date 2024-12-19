@@ -14,6 +14,90 @@ header {
 }
 
 /* Top Header */
+
+/* Heading Styles (H1 to H6) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif; /* Match body font */
+  font-weight: bold; /* Consistent font weight for headings */
+  line-height: 1.4; /* Consistent line height */
+  margin: 0 0 20px; /* Consistent margin below headings */
+  text-transform: capitalize; /* Adjust text casing if needed */
+}
+
+/* Specific Font Sizes for Headings */
+h1 {
+  font-size: 2.5rem; /* Largest heading */
+}
+h2 {
+  font-size: 2rem; /* Slightly smaller */
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+/* Paragraph and Text Links */
+p, a, span, li, input, button, textarea {
+  font-family: 'Roboto', sans-serif; /* Match body font */
+  font-size: 1rem; /* Standard text size */
+  line-height: 1.6; /* Comfortable line height */
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Button Styles */
+button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1.4;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link, .dropdown-menu .dropdown-item {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Footer and Small Text */
+.footer, .footer a, .footer p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem; /* Slightly smaller for footer text */
+  line-height: 1.5;
+}
+
+/* Override Font Size on Smaller Screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  h6 {
+    font-size: 0.875rem;
+  }
+}
+/* Top Header */
 .top-header {
   background-color: #000141;
   color: #ffffff;
@@ -28,13 +112,15 @@ header {
 }
 
 /* Logo and Navbar Container */
+/* Logo and Navbar Container */
 .logo-navbar {
   display: flex;
   align-items: center;
   justify-content: space-between; /* Align logo to left and toggler to right */
-  padding: 10px 20px;
+  padding: 15px 20px;
   background-color: #ffffff;
   border-bottom: 1px solid #eaeaea;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
 }
 
 .navbar-logo {
@@ -42,26 +128,26 @@ header {
 }
 
 .navbar-logo img {
-  max-height: 90px; /* Increased size from 70px to 90px */
+  max-height: 80px; /* Adjusted to balance size and responsiveness */
   width: auto; /* Maintain aspect ratio */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar-logo img:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-  opacity: 0.9;
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  opacity: 0.85; /* Slight fade effect */
 }
 
 /* Responsive Design for Logo */
 @media (max-width: 768px) {
-  .navbar-logo img {
-    max-height: 80px; /* Increased size for smaller screens */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure the logo fits neatly */
-    padding: 5px; /* Add padding for spacing if necessary */
-    background-color: transparent; /* No background for the logo */
-  }
+.navbar-logo img {
+  max-height: 70px; /* Adjusted for smaller screens */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo fits neatly */
+  padding: 5px; /* Add padding for spacing if necessary */
 }
+}
+
 /* Navbar */
 .navbar {
   flex-grow: 1;
@@ -71,75 +157,250 @@ header {
 /* Toggler Button */
 .navbar-toggler {
   position: absolute;
-  right: 20px; /* Fixed to the right corner */
+  right: 70px; /* Fixed to the right corner */
   top: 50%; /* Centered vertically */
   transform: translateY(-50%);
   z-index: 10;
+  background-color: #04054c; /* Consistent with theme */
   border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+
+.navbar-toggler:hover {
+  background-color: #0056b3; /* Slightly darker on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+  transform: rotate(180deg); /* Rotate effect */
 }
 
 /* Navbar Links */
 .navbar-nav .nav-link {
-  margin: 0 10px;
-  color: #333;
-  font-size: 15px;
+  margin: 0 12px; /* Slightly increased margin for better spacing */
+  color: #333333;
+  font-size: 16px; /* Increased font size for readability */
   font-weight: 500;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #000141;
-  transform: translateY(-2px);
+  color: #0d0f94; /* Changed hover color for better visibility */
+  transform: translateY(-3px); /* Slight lift effect */
 }
 
+/* Default Button Style */
 .navbar-nav .btn-primary {
-  background-color: #000141;
-  color: #ffffff;
-  border-radius: 20px;
-  padding: 5px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #0d0f94; /* Blue background */
+  color: #ffffff; /* White font color */
+  border-radius: 25px; /* Rounded edges */
+  padding: 6px 18px; /* Comfortable padding */
+  font-size: 14px; /* Button text size */
+  font-weight: bold; /* Bold text */
+  border: 2px solid #0d0f94; /* Matches the background initially */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover State */
 .navbar-nav .btn-primary:hover {
-  background-color: #ffffff;
-  color: #000141;
-  border: 1px solid #000141;
+  background-color: #ffffff; /* White background */
+  color: #0d0f94; /* Blue font */
+  border: 2px solid #0d0f94; /* Blue border */
+  transform: scale(1.05); /* Slight scaling effect */
 }
 
-/* Responsive Design */
+/* Focus State */
+.navbar-nav .btn-primary:focus {
+  background-color: #ffffff; /* Same as hover */
+  color: #0d0f94; /* Blue font */
+  border: 2px solid #0d0f94; /* Blue border */
+  outline: none; /* Remove focus outline */
+  transform: scale(1.05); /* Ensure focus matches hover effect */
+}
+
+
+
+/* General Small Screen Adjustments */
+/* General Small Screen Adjustments */
 @media (max-width: 768px) {
   .logo-navbar {
     flex-direction: row; /* Maintain row alignment for logo and toggler */
     justify-content: space-between; /* Keep logo and toggler at corners */
+    padding: 10px 15px; /* Reduced padding for smaller screens */
   }
 
   .navbar-toggler {
     position: relative; /* Reset positioning for mobile */
-    right: -450px; /* Properly align the toggler */
+    right: -50px; /* Shift more to the right */
     transform: none;
     margin-top: 0;
+    background-color: #000141; /* Ensures visibility on small screens */
+    padding: 8px 12px;
+    border-radius: 5px;
   }
 
   .navbar-nav {
     text-align: center;
+    flex-direction: column; /* Stack links vertically */
+    padding-top: 10px;
+    background-color: white; /* Dropdown background for better contrast */
+    border-top: 1px solid #eaeaea;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .navbar-nav .nav-link {
-    margin: 5px 0;
+    margin: 8px 0; /* Increased spacing between links */
+    font-size: 1rem; /* Ensure readability on smaller screens */
   }
 
   /* Improved Logo Styling */
   .navbar-logo img {
-    max-height: 60px; /* Adjust logo size for smaller screens */
+    max-height: 60px; /* Adjusted for smaller screens */
     width: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensure the logo fits neatly */
     padding: 5px; /* Add padding for spacing */
-    background-color: transparent; /* Ensure no background for the logo */
+  }
+
+  /* Hero Section Adjustments */
+  .hero-section {
+    padding: 40px 20px; /* Reduce padding for smaller screens */
+    background-position: center center;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-image {
+    max-width: 100%; /* Full-width for smaller screens */
+    height: auto;
+    margin-top: 20px;
+  }
+
+  /* Welcome Section */
+  .welcome-section {
+    padding: 20px;
+  }
+
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+
+  .welcome-section p {
+    font-size: 1rem;
+  }
+
+  /* Footer Adjustments */
+  .footer {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer a {
+    font-size: 0.9rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+
+  /* Enquiry Section */
+  .enquiry-section {
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .enquiry-title {
+    font-size: 1.5rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  /* Product Section */
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+
+  /* Help Section */
+  .help-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .help-section .content {
+    max-width: 100%;
+  }
+
+  .contact-options {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .illustration img {
+    max-width: 150px;
+  }
+
+  /* Responsive Typography */
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5, h6 {
+    font-size: 1rem;
   }
 }
 
+
+        .navbar-brand img {
+            max-height: 70px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+            opacity: 0.85;
+        }
 
 .hero-section {
     position: relative;
@@ -149,21 +410,20 @@ header {
     background-size: cover;
     color: #fff;
 }
-
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #000141;
-    border-radius: 0 0 40% 40%;   .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5);
-}}
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000141;
+  border-radius: 0 0 40% 40%;
+}
 /* Default Toggler Background */
 /* Default Toggler Background */
 .navbar-toggler {
     background-color: #000141; /* Deep blue background */
+    color: white;
     border: none; /* Remove default border */
     border-radius: 5px; /* Rounded corners */
     padding: 8px 12px; /* Add consistent padding */
@@ -216,9 +476,6 @@ header {
     background-color:  #0f12d7;
     color: rgb(255, 255, 255);
 }
-
-
-
 
 .hero-content {
     position: relative;
@@ -350,46 +607,72 @@ color: white;
     border-radius: 8px;
 }
 
-/* Footer Section */
+  
 .footer-section {
-    background-color: #000141;
-    color: #f8f9fa;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
+  background-color: #000141;
+  color: #f8f9fa;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 .footer-title {
-    font-family: 'Times New Roman', serif;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #f8f9fa;
-    padding-bottom: 8px;
+  font-family: 'Times New Roman', serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f8f9fa;
+  padding-bottom: 8px;
 }
 
 .footer-contact,
 .footer-links {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  text-align: center;
 }
 
 .footer-contact li,
 .footer-links li {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    color: #f8f9fa;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #f8f9fa;
 }
 
 .footer-contact li i {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .footer-links li a {
-    color: #f8f9fa;
-    text-decoration: none;
+  color: #f8f9fa;
+  text-decoration: none;
 }
 
 .footer-links li a:hover {
-    color: #ddd;
+  color: #ddd;
+}
+
+.footer-copyright {
+  text-align: center;
+  padding: 20px;
+
+  color: #ffffff;
+  font-size: 14px;
+
+}
+
+.footer-copyright p {
+  margin: 5px 0;
+}
+
+.footer-copyright a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-copyright a:hover {
+  color: #d1ecf1;
 }
 
 /* Newsletter Section */
@@ -693,15 +976,15 @@ color: white;
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
     .product-section h2 {
-        font-size: 1.8em;
+      font-size: 2em;
     }
 
     .product-card h3 {
-        font-size: 1.3em;
+        font-size: 1.8em;
     }
 
     .product-card p {
-        font-size: 0.9em;
+        font-size: 1.0em;
     }
 
     .view-more {
@@ -716,11 +999,11 @@ color: white;
 
 @media (max-width: 480px) {
     .product-section h2 {
-        font-size: 1.6em;
+      font-size: 2em;
     }
 
     .product-card h3 {
-        font-size: 1.2em;
+        font-size: 1.8em;
     }
 
     .view-more {
@@ -1122,7 +1405,7 @@ color: white;
 }
 
 .help-section .content h2 {
-    font-size: 36px;
+  font-size: 2em;
     margin-bottom: 20px;
 }
 
@@ -1252,7 +1535,7 @@ color: white;
     }
 
     .help-section .content h2 {
-        font-size: 24px;
+      font-size: 2em;
     }
 
     .help-section .content p {
