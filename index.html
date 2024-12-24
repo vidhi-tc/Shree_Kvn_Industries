@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shri KVN Industries</title>
+    
 
     <link href="/Assests/shri.png" rel="icon">
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -11,62 +12,282 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Assests/style.css"> <!-- Link to your external CSS file -->
+    <style>  /* General Styling */
+        body {
+      font-family: 'Roboto', sans-serif;
+      background: #e0e7f1; /* Subtle gradient background for elegance */
+      color: #333;
+    }
+
+      header {
+width: 100%;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+position: fixed; /* Fix the header at the top */
+top: 0;
+z-index: 1030; /* Ensure it stays above all other elements */
+background-color: #ffffff;
+}
+
+/* Top Header */
+.top-header {
+background-color: #000141;
+color: #ffffff;
+text-align: center;
+padding: 5px 0;
+font-size: 14px;
+}
+
+.top-header a {
+color: #f8f9fa;
+text-decoration: none;
+}
+
+/* Logo and Navbar Container */
+/* Logo and Navbar Container */
+.logo-navbar {
+display: flex;
+align-items: center;
+justify-content: space-between; /* Align logo to left and toggler to right */
+padding: 10px 20px;
+background-color: #ffffff;
+border-bottom: 1px solid #eaeaea;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+}
+
+.navbar-logo {
+flex-shrink: 0; /* Ensure the logo does not shrink */
+}
+
+.navbar-logo img {
+max-height: 80px; /* Adjusted to balance size and responsiveness */
+width: auto; /* Maintain aspect ratio */
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-logo img:hover {
+transform: scale(1.1); /* Slight zoom effect on hover */
+opacity: 0.85; /* Slight fade effect */
+}
+
+/* Responsive Design for Logo */
+@media (max-width: 768px) {
+.navbar-logo img {
+  max-height: 70px; /* Adjusted for smaller screens */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo fits neatly */
+  padding: 5px; /* Add padding for spacing if necessary */
+}
+}
+
+/* Navbar */
+.navbar {
+flex-grow: 1;
+padding: 15PX; /* Remove default padding */
+}
+
+/* Toggler Button */
+.navbar-toggler {
+position: absolute;
+right: 20px; /* Fixed to the right corner */
+top: 50%; /* Centered vertically */
+transform: translateY(-50%);
+z-index: 10;
+background-color: #04054c; /* Consistent with theme */
+border: none;
+padding: 8px 12px;
+border-radius: 5px;
+transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+background-color: #0056b3; /* Slightly darker on hover */
+transform: scale(1.05); /* Slight scaling effect */
+}
+
+.navbar-toggler-icon {
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+transform: rotate(180deg); /* Rotate effect */
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+margin: 0 12px; /* Slightly increased margin for better spacing */
+color: #333333;
+font-size: 16px; /* Increased font size for readability */
+font-weight: 500;
+transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+color: #0d0f94; /* Changed hover color for better visibility */
+transform: translateY(-3px); /* Slight lift effect */
+}
+
+.navbar-nav .btn-primary {
+background-color: #0d0f94;
+color: #ffffff;
+border-radius: 25px;
+padding: 6px 18px; /* Adjusted padding for a sleek look */
+font-size: 14px;
+font-weight: bold;
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .btn-primary:hover {
+background-color: #ffffff;
+color: #0d0f94;
+border: 2px solid #0d0f94; /* Added border for hover effect */
+transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Responsive Design */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 15px; /* Increase padding for overall spacing */
+        align-items: flex-start; /* Align items at the top */
+    }
+
+    /* Adjust Logo */
+    .navbar-logo {
+        margin-bottom: 20px; /* Move logo further down */
+        text-align: center; /* Center the logo */
+        width: 100%; /* Ensure logo takes full width */
+    }
+
+    .navbar-logo img {
+        max-height: 80px; /* Larger logo for mobile */
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* Adjust Toggle Button */
+    .navbar-toggler {
+        display: block;
+        position: relative; /* Allow normal flow positioning */
+        margin-left: auto;
+        margin-top: 15px; /* Move toggle button further down */
+    }
+
+    .navbar-toggler-icon {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Navbar Dropdown */
+    .navbar-nav {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Full width */
+        background-color: #ffffff; /* Background for dropdown */
+        padding: 10px 0;
+        padding-top: 20px; /* Add spacing for dropdown */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-toggler[aria-expanded="true"] + .navbar-nav {
+        display: flex; /* Show menu when toggler is clicked */
+    }
+
+    .navbar-nav .nav-link {
+        margin: 8px 0; /* Vertical spacing for links */
+        font-size: 14px;
+    }
+}
+
+/* Smallest Screens (e.g., <480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 20px 10px; /* Add more spacing for smallest screens */
+    }
+
+    .navbar-logo {
+        margin-bottom: 15px; /* Slightly reduce the gap below the logo */
+    }
+
+    .navbar-logo img {
+        max-height: 90px; /* Larger logo for smallest screens */
+        width: auto;
+    }
+
+    .navbar-toggler {
+        margin-top: 20px; /* Move toggle button further down */
+    }
+
+    .navbar-nav {
+        gap: 10px; /* Reduce gap for links */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 12px; /* Smaller font for smallest screens */
+    }
+}
+</style>
 </head>
 <body>
     <!-- Top Header for Contact Info -->
     <header>
+        <!-- Logo (Positioned independently) -->
+        <div id="custom-logo">
+            <img src="/Assests/shreekvnlogo-08.png" alt="Shri KVN Industries Logo">
+        </div>
+    
         <!-- Top Header -->
         <div class="top-header">
-          <span>
-            <i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a>
-            <i class="fa fa-envelope"></i> Email: <a href="mailto:customercare@shrikvnindustries.com">shrikvnindustries@gmail.com</a>
-          </span>
+            <span>
+                <i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a>
+                <i class="fa fa-envelope"></i> Email: <a href="mailto:customercare@shrikvnindustries.com">shrikvnindustries@gmail.com</a>
+            </span>
         </div>
-      
+    
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg">
-          <div class="container">
-            <a class="navbar-brand" href="#">
-              <img src="/Assests/shreekvnlogo-08.png" alt="Shri KVN Industries Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <nav class="navbar navbar-expand-lg">
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="//pages/about.html">About Us</a></li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
-                  <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                    <li><a class="dropdown-item" href="/pages/plain.html">Plain Seals</a></li>
-                    <li><a class="dropdown-item" href="/pages/printed.html">Printed Seals</a></li>
-                    <li><a class="dropdown-item" href="/pages/vented.html">Vented Seals</a></li>
-                    <li><a class="dropdown-item" href="/pages/plastic.html">Plastic Seals</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="/pages/service.html">Service</a></li>
-                <li class="nav-item"><a class="nav-link" href="/pages/contact.html">Contact Us</a></li>
-                <li class="nav-item">
-                    <a 
-                      class="btn btn-primary nav-link" 
-                      href="/pages/broucher.html" 
-                      id="brochure-link" 
-                      style="background-color: #0d0f94; color: #ffffff; border-radius: 25px; padding: 6px 18px; font-size: 14px; font-weight: bold; text-decoration: none; border: 2px solid #0d0f94; transition: background-color 0.3s ease, color 0.3s ease;"
-                      onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#0d0f94';" 
-                      onmouseout="this.style.backgroundColor='#0d0f94'; this.style.color='#ffffff';"
-                    >
-                      Brochure
-                    </a>
-                  </li>
-               
-              </ul>
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/about.html">About Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                                <li><a class="dropdown-item" href="/pages/plain.html">Plain Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/printed.html">Printed Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/vented.html">Vented Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/plastic.html">Plastic Seals</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/service.html">Service</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/contact.html">Contact Us</a></li>
+                        <li class="nav-item">
+                            <a 
+                                class="btn btn-primary nav-link" 
+                                href="/pages/broucher.html" 
+                                id="brochure-link" 
+                                style="color: white; background-color: rgb(47, 47, 247); border-radius: 25px; padding: 6px 18px; font-size: 14px; font-weight: bold; text-decoration: none; border: 2px solid blue; transition: background-color 0.3s ease, color 0.3s ease;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='blue';" 
+                                onmouseout="this.style.backgroundColor='blue'; this.style.color='white';"
+                            >
+                                Brochure
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-          </div>
-        </nav>
-      </header>
+    </header>
+
+    
       
 
 
@@ -97,6 +318,7 @@
 <img src="/Assests/zin1.jpg" alt="Decorative Background" class="background-image-5">
 <div class="bokeh-container" id="bokeh-container"></div>
 <div class="bokeh-container" id="bokeh-container"></div>
+
 
     <!-- Hero Section -->
     <div class="hero-section">
