@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri KVN Industries</title>
+
+
+    <link href="/public/Assests/shri.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/Assests/style.css"> <!-- Link to your external CSS file -->
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #e0e7f1;
+            /* Subtle gradient background for elegance */
+            color: #333;
+        }
+
+        header {
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            /* Fix the header at the top */
+            top: 0;
+            z-index: 1030;
+            /* Ensure it stays above all other elements */
+            background-color: #ffffff;
+        }
+
+        /* Top Header */
+        .top-header {
+            background-color: #000141;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+
+        .top-header a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        /* Logo and Navbar Container */
+        /* Logo and Navbar Container */
+        .logo-navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* Align logo to left and toggler to right */
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            /* Add a subtle shadow for better visibility */
+        }
+
+        .navbar-logo {
+            flex-shrink: 0;
+            /* Ensure the logo does not shrink */
+        }
+
+        .navbar-logo img {
+            max-height: 80px;
+            /* Adjusted to balance size and responsiveness */
+            width: auto;
+            /* Maintain aspect ratio */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .navbar-logo img:hover {
+            transform: scale(1.1);
+            /* Slight zoom effect on hover */
+            opacity: 0.85;
+            /* Slight fade effect */
+        }
+
+        /* Responsive Design for Logo */
+        @media (max-width: 768px) {
+            .navbar-logo img {
+                max-height: 70px;
+                /* Adjusted for smaller screens */
+                width: auto;
+                /* Maintain aspect ratio */
+                object-fit: contain;
+                /* Ensure the logo fits neatly */
+                padding: 5px;
+                /* Add padding for spacing if necessary */
+            }
+        }
+
+        /* Navbar */
+        .navbar {
+            flex-grow: 1;
+            padding: 15PX;
+            /* Remove default padding */
+        }
+
+        /* Toggler Button */
+        .navbar-toggler {
+            position: absolute;
+            right: 20px;
+            /* Fixed to the right corner */
+            top: 50%;
+            /* Centered vertically */
+            transform: translateY(-50%);
+            z-index: 10;
+            background-color: #04054c;
+            /* Consistent with theme */
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            background-color: #0056b3;
+            /* Slightly darker on hover */
+            transform: scale(1.05);
+            /* Slight scaling effect */
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-toggler:hover .navbar-toggler-icon {
+            transform: rotate(180deg);
+            /* Rotate effect */
+        }
+
+        /* Navbar Links */
+        .navbar-nav .nav-link {
+            margin: 0 12px;
+            /* Slightly increased margin for better spacing */
+            color: #333333;
+            font-size: 16px;
+            /* Increased font size for readability */
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #0d0f94;
+            /* Changed hover color for better visibility */
+            transform: translateY(-3px);
+            /* Slight lift effect */
+        }
+
+        .navbar-nav .btn-primary {
+            background-color: #0d0f94;
+            color: #ffffff;
+            border-radius: 25px;
+            padding: 6px 18px;
+            /* Adjusted padding for a sleek look */
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-nav .btn-primary:hover {
+            background-color: #ffffff;
+            color: #0d0f94;
+            border: 2px solid #0d0f94;
+            /* Added border for hover effect */
+            transform: scale(1.1);
+            /* Slight scaling effect */
+        }
+
+        /* Responsive Design */
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 20px 15px;
+                /* Increase padding for overall spacing */
+                align-items: flex-start;
+                /* Align items at the top */
+            }
+
+            /* Adjust Logo */
+            .navbar-logo {
+                margin-bottom: 20px;
+                /* Move logo further down */
+                text-align: center;
+                /* Center the logo */
+                width: 100%;
+                /* Ensure logo takes full width */
+            }
+
+            .navbar-logo img {
+                max-height: 80px;
+                /* Larger logo for mobile */
+                width: auto;
+                object-fit: contain;
+            }
+
+            /* Adjust Toggle Button */
+            .navbar-toggler {
+                display: block;
+                position: relative;
+                /* Allow normal flow positioning */
+                margin-left: auto;
+                margin-top: 15px;
+                /* Move toggle button further down */
+            }
+
+            .navbar-toggler-icon {
+                display: block;
+                width: 24px;
+                height: 24px;
+            }
+
+            /* Navbar Dropdown */
+            .navbar-nav {
+                display: none;
+                /* Hidden by default */
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                /* Full width */
+                background-color: #ffffff;
+                /* Background for dropdown */
+                padding: 10px 0;
+                padding-top: 20px;
+                /* Add spacing for dropdown */
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-toggler[aria-expanded="true"]+.navbar-nav {
+                display: flex;
+                /* Show menu when toggler is clicked */
+            }
+
+            .navbar-nav .nav-link {
+                margin: 8px 0;
+                /* Vertical spacing for links */
+                font-size: 14px;
+            }
+        }
+
+        /* Smallest Screens (e.g., <480px) */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 20px 10px;
+                /* Add more spacing for smallest screens */
+            }
+
+            .navbar-logo {
+                margin-bottom: 15px;
+                /* Slightly reduce the gap below the logo */
+            }
+
+            .navbar-logo img {
+                max-height: 90px;
+                /* Larger logo for smallest screens */
+                width: auto;
+            }
+
+            .navbar-toggler {
+                margin-top: 20px;
+                /* Move toggle button further down */
+            }
+
+            .navbar-nav {
+                gap: 10px;
+                /* Reduce gap for links */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 12px;
+                /* Smaller font for smallest screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Header for Contact Info -->
+    <header>
+        <!-- Logo (Positioned independently) -->
+        <div id="custom-logo">
+            <img src="/public/Assests/shreekvnlogo-08.png" alt="Shri KVN Industries Logo">
+        </div>
+
+        <!-- Top Header -->
+        <div class="top-header">
+            <span>
+                <i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a>
+                <i class="fa fa-envelope"></i> Email: <a
+                    href="mailto:customercare@shrikvnindustries.com">shrikvnindustries@gmail.com</a>
+            </span>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/about.html">About Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                                <li><a class="dropdown-item" href="/pages/plain.html">Plain Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/printed.html">Printed Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/vented.html">Vented Seals</a></li>
+                                <li><a class="dropdown-item" href="/pages/plastic.html">Plastic Seals</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/service.html">Service</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pages/contact.html">Contact Us</a></li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary nav-link" href="/pages/broucher.html" id="brochure-link"
+                                style="color: white; background-color: rgb(47, 47, 247); border-radius: 25px; padding: 6px 18px; font-size: 14px; font-weight: bold; text-decoration: none; border: 2px solid blue; transition: background-color 0.3s ease, color 0.3s ease;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='blue';"
+                                onmouseout="this.style.backgroundColor='blue'; this.style.color='white';">
+                                Brochure
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="logo-container">
+                <!-- KVN Logo -->
+                <img src="/public/Assests/shreekvnlogo-08.png" alt="KVN Logo" class="loading-logo">
+                <!-- Shattered Pieces -->
+                <div class="shatter-overlay">
+                    <div class="shard shard1"></div>
+                    <div class="shard shard2"></div>
+                    <div class="shard shard3"></div>
+                    <div class="shard shard4"></div>
+                    <div class="shard shard5"></div>
+                </div>
+            </div>
+            <!-- Loading Text -->
+            <h1>Loading... Please Wait</h1>
+        </div>
+    </div>
+
+
+    <img src="/public/Assests/shreekvnlogo-08.png" alt="Decorative Background" class="background-image-1">
+    <img src="/public/Assests/zin2.png" alt="Decorative Background" class="background-image-2">
+    <img src="/public/Assests/zin3.png" alt="Decorative Background" class="background-image-3">
+    <img src="/public/Assests/zin4.png" alt="Decorative Background" class="background-image-4">
+    <img src="/public/Assests/zin1.jpg" alt="Decorative Background" class="background-image-5">
+    <div class="bokeh-container" id="bokeh-container"></div>
+    <div class="bokeh-container" id="bokeh-container"></div>
+
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="display-5">SEALING SOLUTIONS BY SHRI KVN INDUSTRIES</h1>
+            <p class="lead">" Sealing Trust "</p>
+            <img src="/public/Assests/PRODU-removebg-preview.png" alt="Product Image" class="img-fluid hero-image">
+        </div>
+    </div>
+    <br><br>
+    <section class="welcome-section">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column (Text) -->
+                <div class="col-md-6">
+                    <h2 class="welcome-title">Welcome to our Website</h2>
+                    <p>Welcome To<strong> SHRI KVN INDUSTRIES</strong> where we take pride in being your trusted partner
+                        for high-quality drum cap seals. Headquartered in the industrial hub of Ankleshwar, Gujarat, we
+                        are a leading manufacturer, supplier, and exporter with a global presence, committed to
+                        providing reliable, tamper-evident sealing solutions that ensure the safety, integrity, and
+                        security of your products.</p>
+                    <p>
+
+                        For years, Shri KVN Industries has been at the forefront of innovation in the drum sealing
+                        sector, specializing in creating top-tier drum cap seals designed to meet the diverse needs of
+                        industries worldwide. Whether you're in chemicals, pharmaceuticals, food & beverages, or any
+                        other sector, our seals offer the perfect solution to safeguard your products during storage,
+                        transport, and distribution.
+
+                        Our commitment to quality, precision, and customer satisfaction has made us a trusted name among
+                        businesses globally. We understand the critical role that drum cap seals play in your
+                        operations, and we deliver products that meet the highest industry standards, providing peace of
+                        mind that your products are well-protected every step of the way.
+
+                        At Shri KVN Industries, we believe in building lasting partnerships with our clients, offering
+                        not just products but also exceptional customer service, expert advice, and tailored solutions
+                        to suit your unique requirements.</p>
+                    <a href="#" class="btn-read-more">Read more</a>
+                </div>
+
+                <!-- Right Column (Image) -->
+                <div class="col-md-6">
+                    <div class="image-container">
+                        <img src="/public/Assests/met.png" alt="Meeting Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+    <section class="info-section">
+        <div class="info-card">
+            <div class="info-icon">
+                <img src="/public/Assests/competitive.png" alt="Mission Icon"> <!-- Replace with actual icon path -->
+            </div>
+            <h3 class="info-title">Our Mission</h3>
+            <p class="info-description">
+                At KVN Cap Seals, our mission is to transform drum packaging with innovative, reliable, and sustainable
+                sealing solutions that enhance safety, efficiency, and environmental responsibility.
+            </p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">
+                <img src="/public/Assests/value-proposal.png" alt="Values Icon"> <!-- Replace with actual icon path -->
+            </div>
+            <h3 class="info-title">Our Values</h3>
+            <p class="info-description">
+                Central to our operations are our core values, which guide our every action and decision. Integrity is
+                the cornerstone of our business, as we conduct ourselves with honesty and respect.
+            </p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">
+                <img src="/public/Assests/vision.png" alt="Vision Icon"> <!-- Replace with actual icon path -->
+            </div>
+            <h3 class="info-title">Our Vision</h3>
+            <p class="info-description">
+                Our vision at Shri Kvn Industries is to become a globally recognized leader in drum cap sealing
+                technology, renowned for our commitment to excellence and customer satisfaction.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="product-section">
+        <h2>OUR CAP SEALS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="/public/Assests/c1.jpeg" alt="Cap Seal Model A">
+                <h3>Vented Cap Seal</h3>
+                <p>High durability and perfect for industrial applications.</p>
+                <a href="pages/vented.html" class="view-more">View More</a>
+            </div>
+            <div class="product-card">
+                <img src="/public/Assests/c2.jpeg" alt="Cap Seal Model B">
+                <h3>Printed Seal</h3>
+                <p>Designed for precision and reliability in diverse environments.</p>
+                <a href="pages/printed.html" class="view-more">View More</a>
+            </div>
+            <div class="product-card">
+                <img src="/public/Assests/c3.jpeg" alt="Cap Seal Model C">
+                <h3>Plain White</h3>
+                <p>Drum cap seal. 70mm and 35mm (2 inch and 3/4 inch).</p>
+                <a href="pages/plain.html" class="view-more">View More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Section -->
+
+
+
+    <!-- Testimonial Section -->
+
+
+
+    <section class="specifications-section">
+        <div class="container">
+            <div class="specifications-content">
+                <h2 class="specifications-title">Specifications</h2>
+                <ul class="specifications-list">
+                    <li>
+                        <span class="icon">&#128204;</span>
+                        Made from durable tin-plated steel or other metals for strength and corrosion resistance.
+                    </li>
+                    <li>
+                        <span class="icon">&#128204;</span>
+                        Designed without a gasket, relying on the precision of the crimping process for a tight seal.
+                    </li>
+                    <li>
+                        <span class="icon">&#128204;</span>
+                        Built to withstand handling and transport stresses, maintaining the integrity of drum contents.
+                    </li>
+                    <li>
+                        <span class="icon">&#128204;</span>
+                        Provides assurance against leakage and contamination.
+                    </li>
+
+                </ul>
+            </div>
+            <div class="specifications-image">
+                <img src="/public/Assests/backg.jpeg" alt="Product Dimensions">
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+
+    <section class="help-section">
+        <div class="content">
+            <h2>Need Help?</h2>
+            <p>
+                "Trust us to provide expert, efficient, and cost-effective cap seal solutions. Our experienced team is
+                here to ensure the highest standards of quality and reliability, tailored to your specific needs. We're
+                ready to help you protect your products with precision and care. 😊"
+                Our experienced team is ready to help you out <span>😊</span>
+            </p>
+            <div class="contact-options">
+                <a href="#" class="contact-btn">Contact Us</a>
+                <span>OR</span>
+                <a href="tel:9870140141" class="phone-btn">9870 140 141</a>
+                <a href="mailto:info@vtransgroup.com" class="email-btn">customercare@kvnindustries.com</a>
+            </div>
+        </div>
+        <div class="illustration">
+            <img src="/public/Assests/illl.png" alt="Illustration" />
+        </div>
+        <div class="benefits">
+            <ul>
+
+            </ul>
+        </div>
+    </section>
+    <br><br>
+
+
+    <br><br>
+    <section class="enquiry-section">
+        <h2 class="enquiry-title">Quick Enquiry</h2>
+        <form class="enquiry-form">
+            <div class="form-group">
+                <input type="text" placeholder="Product / Service Looking For">
+                <input type="text" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email">
+                <select>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                    <!-- Add other countries as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="+91">
+                <input type="text" placeholder="Phone / Mobile">
+            </div>
+            <textarea placeholder="Leave a Message for us"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+
+
+                <!-- Quick Contact -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <h4 class="footer-title">Quick Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa fa-building"></i> SHRI KVN INDUSTRIES</li>
+                        <li><i class="fa fa-user"></i> Mr. Karan </li>
+                        <li><i class="fa fa-map-marker"></i>Plot No-A-6,Kamdhenu Industrial Park-4,
+                            Block/Survey,No.686,Jitali,Bharuch,393002</li>
+                        <li><i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a></li>
+                        <li><i class="fa fa-envelope"></i> <a
+                                href="mailto:customercare@shrikvnindustries.com">customercare@shrikvnindustries.com</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- General Links -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <h4 class="footer-title">General Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/contact.html">Contact Us</a></li>
+                        <li><a href="pages/about.html">About Us</a></li>
+                        <li><a href="pages/broucher.html">Broucher</a></li>
+                        <li><a href="#">Site Map</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <h4 class="footer-title">Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/plain.html">Plain Cap Seal</a></li>
+                        <li><a href="pages/printed.html">Printed Cap Seal</a></li>
+                        <li><a href="pages/vented.html">Vented Cap Seal</a></li>
+                        <li><a href="pages/plastic.html">Plastic Cap Seal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                <p>All Rights Reserved. <strong>Shree KVN Industries </strong></p>
+                <p>Developed & Managed by <a href="#">Kvn Industries</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/public/Assests/scripts.js"></script>
+    <script>document.getElementById('brochure-link').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            // Step 1: Trigger the file download
+            const brochureFileUrl = 'assets/kvn.pdf'; // Replace with your actual file path
+            const anchor = document.createElement('a');
+            anchor.href = brochureFileUrl;
+            anchor.download = 'kvn.pdf'; // Specify the downloaded file name
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+
+            // Step 2: Redirect to the brochure.html page
+            setTimeout(() => {
+                window.location.href = 'pages/broucher.html'; // Replace with your actual HTML file path
+            }, 500); // Delay to ensure the download starts
+        });
+
+    </script>
+
+    <script>document.addEventListener('mousemove', function (e) {
+            const gradient = document.querySelector('.gradient-overlay');
+            const size = 75; // Half of the diameter for centering
+            gradient.style.transform = `translate(${e.clientX - size}px, ${e.clientY - size}px)`;
+        });
+
+    </script>
+</body>
+
+</html>

@@ -36,7 +36,7 @@ document.getElementById('brochure-link').addEventListener('click', function (eve
     event.preventDefault(); // Prevent the default link behavior
 
     // Step 1: Trigger the file download
-    const brochureFileUrl = '../Assests/kvn.pdf'; // Replace with your actual file path
+    const brochureFileUrl = '../public/Assests/kvn.pdf'; // Replace with your actual file path
     const anchor = document.createElement('a');
     anchor.href = brochureFileUrl;
     anchor.download = 'kvn.pdf'; // Specify the downloaded file name
