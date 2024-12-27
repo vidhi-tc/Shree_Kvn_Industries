@@ -45,192 +45,165 @@ text-decoration: none;
 
 /* Logo and Navbar Container */
 /* Logo and Navbar Container */
+/* Logo and Navbar Container */
+/* Logo and Navbar Container */
 .logo-navbar {
-display: flex;
-align-items: center;
-justify-content: space-between; /* Align logo to left and toggler to right */
-padding: 10px 20px;
-background-color: #ffffff;
-border-bottom: 1px solid #eaeaea;
-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align logo to left and toggler to right */
+    padding: 90px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
 }
 
+/* Navbar Logo */
+/* Logo Container */
 .navbar-logo {
-flex-shrink: 0; /* Ensure the logo does not shrink */
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+    margin-top:50px; /* Adjust margin for spacing above the logo */
 }
 
+/* Logo Styling */
 .navbar-logo img {
-max-height: 80px; /* Adjusted to balance size and responsiveness */
-width: auto; /* Maintain aspect ratio */
-transition: transform 0.3s ease, opacity 0.3s ease;
+    border: 5px solid white; /* White circular border */
+    border-radius: 50%; /* Make the logo circular */
+    background-color: white; /* Ensure the circle has a white background */
+    height: 100px; /* Set a fixed height */
+    width: 100px; /* Set a fixed width to maintain the circle */
+    object-fit: contain; /* Keep the logo proportions inside the circle */
+    padding: 10px; /* Inner spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover Effects */
 .navbar-logo img:hover {
-transform: scale(1.1); /* Slight zoom effect on hover */
-opacity: 0.85; /* Slight fade effect */
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
-/* Responsive Design for Logo */
+/* Responsive Design */
 @media (max-width: 768px) {
-.navbar-logo img {
-  max-height: 70px; /* Adjusted for smaller screens */
-  width: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure the logo fits neatly */
-  padding: 5px; /* Add padding for spacing if necessary */
-}
+    .logo-navbar {
+        flex-direction: row; /* Ensure logo and toggler are aligned horizontally */
+    }
+    .navbar-logo img {
+        height: 60px; /* Adjust size for tablets */
+        width: 60px; /* Keep the circular design */
+    }
 }
 
-/* Navbar */
+@media (max-width: 576px) {
+    .navbar-logo img {
+        height: 50px; /* Adjust size for mobile screens */
+        width: 50px;
+        margin-top: -30px;
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
+}
+
 .navbar {
-flex-grow: 1;
-padding: 15PX; /* Remove default padding */
+    flex-grow: 1;
+    padding: 25px;
 }
 
 /* Toggler Button */
 .navbar-toggler {
-position: absolute;
-right: 20px; /* Fixed to the right corner */
-top: 50%; /* Centered vertically */
-transform: translateY(-50%);
-z-index: 10;
-background-color: #04054c; /* Consistent with theme */
-border: none;
-padding: 8px 12px;
-border-radius: 5px;
-transition: all 0.3s ease;
+    position: fixed; /* Fixed to top in responsive mode */
+    top: 65px; /* Position at the top */
+    right: 20px; /* Align to the right */
+    z-index: 1031; /* Ensure it stays above other elements */
+    background-color: #04054c; /* Consistent button color */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
+/* Remove Hover Effects */
 .navbar-toggler:hover {
-background-color: #0056b3; /* Slightly darker on hover */
-transform: scale(1.05); /* Slight scaling effect */
+    background-color: #04054c; /* Same color on hover */
+    transform: none;
 }
 
+/* Navbar Toggler Icon */
 .navbar-toggler-icon {
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-transition: transform 0.3s ease;
-}
-
-.navbar-toggler:hover .navbar-toggler-icon {
-transform: rotate(180deg); /* Rotate effect */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
 }
 
 /* Navbar Links */
+.navbar-nav {
+    margin: 0;
+    padding: 0;
+}
+
 .navbar-nav .nav-link {
-margin: 0 12px; /* Slightly increased margin for better spacing */
-color: #333333;
-font-size: 16px; /* Increased font size for readability */
-font-weight: 500;
-transition: color 0.3s ease, transform 0.3s ease;
+    margin: 0 12px;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px;
 }
 
 .navbar-nav .nav-link:hover {
-color: #0d0f94; /* Changed hover color for better visibility */
-transform: translateY(-3px); /* Slight lift effect */
+    color: #0d0f94; /* Highlight on hover */
 }
 
-.navbar-nav .btn-primary {
-background-color: #0d0f94;
-color: #ffffff;
-border-radius: 25px;
-padding: 6px 18px; /* Adjusted padding for a sleek look */
-font-size: 14px;
-font-weight: bold;
-transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar-nav .btn-primary:hover {
-background-color: #ffffff;
-color: #0d0f94;
-border: 2px solid #0d0f94; /* Added border for hover effect */
-transform: scale(1.1); /* Slight scaling effect */
+/* Dropdown Menu */
+.navbar-nav .dropdown-menu {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
 /* Responsive Design */
 @media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 20px 15px; /* Increase padding for overall spacing */
-        align-items: flex-start; /* Align items at the top */
+    .navbar-collapse {
+        background-color: #ffffff;
+        padding: 24px; /* Increased padding */
+        border-radius: 5px;
     }
 
-    /* Adjust Logo */
-    .navbar-logo {
-        margin-bottom: 20px; /* Move logo further down */
-        text-align: center; /* Center the logo */
-        width: 100%; /* Ensure logo takes full width */
-    }
-
-    .navbar-logo img {
-        max-height: 80px; /* Larger logo for mobile */
-        width: auto;
-        object-fit: contain;
-    }
-
-    /* Adjust Toggle Button */
-    .navbar-toggler {
-        display: block;
-        position: relative; /* Allow normal flow positioning */
-        margin-left: auto;
-        margin-top: 15px; /* Move toggle button further down */
-    }
-
-    .navbar-toggler-icon {
-        display: block;
-        width: 24px;
-        height: 24px;
-    }
-
-    /* Navbar Dropdown */
     .navbar-nav {
-        display: none; /* Hidden by default */
-        flex-direction: column;
-        align-items: center;
-        width: 100%; /* Full width */
-        background-color: #ffffff; /* Background for dropdown */
-        padding: 10px 0;
-        padding-top: 20px; /* Add spacing for dropdown */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar-toggler[aria-expanded="true"] + .navbar-nav {
-        display: flex; /* Show menu when toggler is clicked */
+        text-align: center;
+        flex-direction: column; /* Stack links vertically */
     }
 
     .navbar-nav .nav-link {
-        margin: 8px 0; /* Vertical spacing for links */
+        padding: 80px 0; /* Increased padding */
+    }
+
+    .dropdown-menu {
+        text-align: left;
+        margin: 0 auto;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        max-height: 50px; /* Increased height */
+    }
+
+    .navbar-nav .nav-link {
         font-size: 14px;
+        padding: 12px 0; /* Increased padding */
+    }
+
+    .btn-primary {
+        font-size: 14px; /* Increased font size */
+        padding: 8px 16px; /* Increased padding */
     }
 }
 
-/* Smallest Screens (e.g., <480px) */
-@media (max-width: 480px) {
-    .navbar {
-        padding: 20px 10px; /* Add more spacing for smallest screens */
-    }
-
-    .navbar-logo {
-        margin-bottom: 15px; /* Slightly reduce the gap below the logo */
-    }
-
-    .navbar-logo img {
-        max-height: 90px; /* Larger logo for smallest screens */
-        width: auto;
-    }
-
-    .navbar-toggler {
-        margin-top: 20px; /* Move toggle button further down */
-    }
-
-    .navbar-nav {
-        gap: 10px; /* Reduce gap for links */
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 12px; /* Smaller font for smallest screens */
-    }
-}
 
       .footer {
   background-color: #004f6e;

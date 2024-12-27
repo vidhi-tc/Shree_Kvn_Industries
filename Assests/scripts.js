@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingScreen.style.display = 'none';
         mainContent.style.display = 'block'; // Show the main content
       }, 500); // Allow fade-out
-    }, 3000); // Adjust timing for the shatter animation
+    },1500); // Adjust timing for the shatter animation
   });
   
 

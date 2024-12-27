@@ -5,71 +5,66 @@ body {
 }
 #custom-logo {
   position: fixed; /* Keeps the logo fixed on the screen */
-  top: 60px; /* Move the logo closer to the top */
-  left: 30px; /* Horizontal position for desktop */
+  top: 6%; /* Adjust top margin */
+  left: 2%; /* Adjust left margin */
   z-index: 1050; /* Ensure it stays above all other elements */
-  transition: top 0.3s ease, left 0.3s ease; /* Smooth position adjustments */
+  display: flex; /* Center content inside */
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  background-color: white; /* White circular background */
+  border-radius: 50%; /* Make it circular */
+  width: 10vw; /* Dynamic size based on viewport */
+  height: 10vw; /* Match width for a perfect circle */
+  overflow: hidden; /* Ensure image doesn't overflow */
+ 
+  transition: all 0.3s ease; /* Smooth resizing */
 }
 
 #custom-logo img {
-  max-height: 100px; /* Default size for desktop */
-  width: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 100%; /* Cover the circular container */
+  height: 100%; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fills the circle */
 }
 
-#custom-logo img:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
-  opacity: 0.85; /* Slight fade effect */
-}
-
-/* Responsive Styling for Tablets (Max Width 768px) */
+/* Responsive Adjustments for Tablets (Max Width 768px) */
 @media (max-width: 768px) {
   #custom-logo {
-    top: 30px; /* Slightly lower for tablets */
-    left: 20px; /* Adjust spacing for tablets */
-  }
-
-  #custom-logo img {
-    max-height: 90px; /* Slightly smaller logo for tablets */
+      top: 6%; /* Adjust for tablets */
+      left: 4%; /* Adjust for tablets */
+      width: 15vw; /* Adjust size */
+      height: 15vw; /* Match width for circular shape */
   }
 }
 
-/* Responsive Styling for Small Screens (Max Width 480px) */
+/* Responsive Adjustments for Small Screens (Max Width 480px) */
 @media (max-width: 480px) {
   #custom-logo {
-    top: 10px; /* Further adjust for mobile */
-    left: 10px; /* Reduce horizontal spacing for mobile */
-  }
-
-  #custom-logo img {
-    max-height: 70px; /* Adjust logo size for mobile screens */
+      top: 6%; /* Adjust for smaller screens */
+      left: 5%; /* Adjust for smaller screens */
+      width: 20vw; /* Adjust size */
+      height: 20vw; /* Match width for circular shape */
   }
 }
 
-/* Responsive Styling for Extra-Large Screens (Min Width 1200px) */
+/* Responsive Adjustments for Large Screens (Min Width 1200px) */
 @media (min-width: 1200px) {
   #custom-logo {
-    top: 10px; /* Move even closer to the top for larger screens */
-    left: 40px; /* Increase horizontal spacing for large screens */
-  }
-
-  #custom-logo img {
-    max-height: 120px; /* Larger logo for big displays */
+      top: 1%; /* Adjust for larger screens */
+      left: 2%; /* Adjust for larger screens */
+      width: 8vw; /* Adjust size */
+      height: 8vw; /* Match width for circular shape */
   }
 }
 
-/* Responsive Styling for Ultra-Large Screens (Min Width 1600px) */
+/* Adjustments for Ultra-Large Screens (Min Width 1600px) */
 @media (min-width: 1600px) {
   #custom-logo {
-    top: 0px; /* Completely align at the top for ultra-large screens */
-    left: 50px; /* Add horizontal spacing for ultra-large screens */
-  }
-
-  #custom-logo img {
-    max-height: 140px; /* Even larger logo for ultra-large screens */
+      top: 1%; /* Align for ultra-large screens */
+      left: 3%; /* Adjust for ultra-large screens */
+      width: 7vw; /* Smaller size */
+      height: 7vw; /* Match width for circular shape */
   }
 }
-
 
 
 /* Top Header */
@@ -131,7 +126,7 @@ button {
   .logo-navbar {
     flex-direction: row; /* Maintain row alignment for logo and toggler */
     justify-content: space-between; /* Keep logo and toggler at corners */
-    padding: 10px 15px; /* Reduced padding for smaller screens */
+    padding: 300px 15px; /* Reduced padding for smaller screens */
   }
 
   .navbar-toggler {
@@ -147,7 +142,7 @@ button {
   .navbar-nav {
     text-align: center;
     flex-direction: column; /* Stack links vertically */
-    padding-top: 10px;
+    padding-top: 50px;
     background-color: white; /* Dropdown background for better contrast */
     border-top: 1px solid #eaeaea;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -160,10 +155,10 @@ button {
 
   /* Improved Logo Styling */
   .navbar-logo img {
-    max-height: 60px; /* Adjusted for smaller screens */
-    width: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure the logo fits neatly */
-    padding: 5px; /* Add padding for spacing */
+    height: 50px; /* Adjust size for mobile screens */
+    width: 50px;
+    margin-top: 90px;
+    padding: 5px; /* Adjust padding for smaller screens */
   }
 
   /* Hero Section Adjustments */
@@ -1172,7 +1167,7 @@ color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 53px;
     padding: 20px;
   }
   
@@ -1608,7 +1603,7 @@ color: white;
     height: auto;
     position: relative;
     z-index: 2;
-    animation: pulse 1.5s infinite;
+    animation: pulse 0.9s infinite;
   }
   
   /* Shatter Overlay */
@@ -1644,19 +1639,19 @@ color: white;
     top: 0;
     left: 50%;
     clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
-    animation-delay: 0.4s;
+    animation-delay: 0.3s;
   }
   .shard3 {
     top: 50%;
     left: 0;
     clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
-    animation-delay: 0.6s;
+    animation-delay: 0.3s;
   }
   .shard4 {
     top: 50%;
     left: 50%;
     clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
-    animation-delay: 0.8s;
+    animation-delay: 0.3s;
   }
   .shard5 {
     top: 0;
@@ -1695,7 +1690,7 @@ color: white;
     font-size: 1.5rem;
     margin-top: 20px;
     text-transform: uppercase;
-    animation: fadeInText 1.5s ease-in-out infinite;
+    animation: fadeInText 0.9s ease-in-out infinite;
     letter-spacing: 2px;
   }
   
