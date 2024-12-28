@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // API endpoint
-    const apiUrl = 'https://vidhierp.in/service.aspx?ApiVer=1&DeviceId=KRISH_ID&AppId=V01&Lat=0&Lng=0&Control=contactus';
+    const apiUrl = 'https://vidhierp.in/service.aspx?ApiVer=1&DeviceId=KRISH_ID&AppId=V01&Lat=0&Lng=0&Control=contactus&data={"Name":"k","Email":"","Contact":"","Message":""}';
 
     // Send data to the API
     fetch(apiUrl, {
