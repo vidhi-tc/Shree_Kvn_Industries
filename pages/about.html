@@ -10,6 +10,7 @@
     <!-- External CSS and Font Links -->
        <link rel="stylesheet" href="../Assests/style.css"> <!-- Link to your external CSS file -->
        <link rel="stylesheet" href="../Assests/scripts.js">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -115,7 +116,7 @@ text-decoration: none;
     top: 65px; /* Position at the top */
     right: 20px; /* Align to the right */
     z-index: 1031; /* Ensure it stays above other elements */
-    background-color: #04054c; /* Consistent button color */
+    background-color: #000141; /* Consistent button color */
     border: none;
     padding: 8px 12px;
     border-radius: 5px;
@@ -124,7 +125,7 @@ text-decoration: none;
 
 /* Remove Hover Effects */
 .navbar-toggler:hover {
-    background-color: #04054c; /* Same color on hover */
+    background-color: #000141; /* Same color on hover */
     transform: none;
 }
 
@@ -178,7 +179,7 @@ text-decoration: none;
     }
 
     .navbar-nav .nav-link {
-        padding: 80px 0; /* Increased padding */
+        padding: 8px 0; /* Increased padding */
     }
 
     .dropdown-menu {
@@ -448,6 +449,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 transition: all 0.3s ease-in-out;
 }
 
+
 .vented-section .section:hover {
 transform: translateY(-5px);
 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -665,7 +667,7 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 200px;
     padding: 10px;
-    background-color: #0e0451;
+    background-color: #000141;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -771,9 +773,10 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             margin-bottom: 15px;
         }
 
-        .product-card h3 {
+        .product-card 
+         {
             font-size: 1.2em;
-            color: #333;
+            color: #000000;
             margin: 10px 0;
         }
 
@@ -978,7 +981,7 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     <div class="top-header">
         <span>
             <i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a>
-            <i class="fa fa-envelope"></i> Email: <a href="mailto:customercare@shrikvnindustries.com">shrikvnindustries@gmail.com</a>
+            <i class="fa fa-envelope"></i> Email: <a href="mailto:shrikvnindustries@gmail.com">shrikvnindustries@gmail.com</a>
         </span>
     </div>
 
@@ -1126,30 +1129,32 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 
  <br><br>
 
-    <section class="enquiry-section">
-        <h2 class="enquiry-title">Quick Enquiry</h2>
-        <form class="enquiry-form">
-            <div class="form-group">
-                <input type="text" placeholder="Product / Service Looking For">
-                <input type="text" placeholder="Your Name">
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Email">
-                <select>
-                    <option>India</option>
-                    <option>USA</option>
-                    <option>UK</option>
-                    <!-- Add other countries as needed -->
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="+91">
-                <input type="text" placeholder="Phone / Mobile">
-            </div>
-            <textarea placeholder="Leave a Message for us"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+ <section class="enquiry-section">
+    <h2 class="enquiry-title">Quick Enquiry</h2>
+    <form class="enquiry-form" id="enquiryForm">
+        <div class="form-group">
+            <input type="text" id="productService" placeholder="Product / Service Looking For" required>
+            <input type="text" id="yourName" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Email" required>
+            <select id="country" required>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" id="contact" placeholder="Contact" required>
+          
+        </div>
+        <textarea id="userMessage" placeholder="Leave a Message for us" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <div id="responseBox" style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+        <!-- API response or status messages will appear here -->
+    </div>
+</section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -1169,7 +1174,7 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
                     <li><i class="fa fa-user"></i> Mr. Karan </li>
                     <li><i class="fa fa-map-marker"></i>Plot No-A-6,Kamdhenu Industrial Park-4, Block/Survey,No.686,Jitali,Bharuch,393002</li>
                     <li><i class="fa fa-phone"></i> Contact: <a href="tel:+919998911883">+91-9998911883</a></li>
-                    <li><i class="fa fa-envelope"></i> <a href="mailto:customercare@shrikvnindustries.com">shrikvnindustries@gmail.com</a></li>
+                    <li><i class="fa fa-envelope"></i> <a href="mailto:shrikvnindustries@gmail.com">shrikvnindustries@gmail.com</a></li>
                     
                 </ul>
             </div>
@@ -1203,7 +1208,7 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   
           <!-- Copyright -->
           <div class="footer-copyright">
-              <p>All Rights Reserved. <strong>Shree KVN Industries </strong></p>
+              <p>All Rights Reserved. <strong>SHRI KVN INDUSTRIES </strong></p>
               <p>Developed & Managed by <a href="#">Anand Prajapati</a></p>
           </div>
       </div>
@@ -1213,6 +1218,53 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const countrySelect = document.getElementById('country');
+      const responseBox = document.getElementById('responseBox');
+  
+      // Form submission
+      document.getElementById('enquiryForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+  
+          // Collect form data
+          const formData = {
+              Name: document.getElementById('yourName').value,
+              Email: document.getElementById('email').value,
+              Contact: document.getElementById('contact').value,
+              Message: `Product/Service: ${document.getElementById('productService').value}. User Message: ${document.getElementById('userMessage').value}`,
+          };
+  
+          // Construct API URL dynamically
+          const apiUrl = `https://vidhierp.in/service.aspx?ApiVer=1&DeviceId=KRISH_ID&AppId=V01&Lat=0&Lng=0&Control=contactus&data={"Name":"k","Email":"","Contact":"","Message":""}`;
+  
+          try {
+              const response = await fetch(apiUrl, {
+                  method: 'GET', // Adjust if API requires POST
+              });
+  
+              if (response.ok) {
+                  const result = await response.json(); // Assuming API returns JSON
+                  responseBox.textContent = `Success: ${result.message || 'Message sent successfully!'}`;
+                  responseBox.style.color = 'green';
+              } else {
+                  responseBox.textContent = 'Failed to send the message. Please try again.';
+                  responseBox.style.color = 'red';
+              }
+          } catch (error) {
+              console.error('Error sending message:', error);
+              responseBox.textContent = 'An error occurred while sending your message. Please try again later.';
+              responseBox.style.color = 'red';
+          }
+  
+          // Show the response box
+          responseBox.style.display = 'block';
+  
+          // Optionally reset the form
+          document.getElementById('enquiryForm').reset();
+      });
+  });
+  </script>
   </body>
   </html>
   

@@ -159,3 +159,84 @@ document.addEventListener('DOMContentLoaded', () => {
     event.target.reset();
   });
 
+
+
+
+  window.onload = function() {
+    var spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'none'; // Hide spinner after page load
+}
+
+window.addEventListener('load', function() {
+    document.getElementById('loading-spinner').style.display = 'none'; // Hide spinner
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".container, .section");
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // Stop observing once loaded
+          }
+      });
+  }, {
+      threshold: 0.1 // Trigger when 10% of the element is visible
+  });
+
+  elements.forEach(el => observer.observe(el));
+});
+
+
+
+
+//product enquiry 
+
+document.addEventListener('DOMContentLoaded', function () {
+  const countrySelect = document.getElementById('country');
+  const responseBox = document.getElementById('responseBox');
+
+  // Form submission
+  document.getElementById('enquiryForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Collect form data
+      const formData = {
+          Name: document.getElementById('yourName').value,
+          Email: document.getElementById('email').value,
+          Contact: document.getElementById('contact').value,
+          Message: `Product/Service: ${document.getElementById('productService').value}. User Message: ${document.getElementById('userMessage').value}`,
+      };
+
+      // Construct API URL dynamically
+      const apiUrl = `https://vidhierp.in/service.aspx?ApiVer=1&DeviceId=KRISH_ID&AppId=V01&Lat=0&Lng=0&Control=contactus&data={"Name":"k","Email":"","Contact":"","Message":""}`;
+
+      try {
+          const response = await fetch(apiUrl, {
+              method: 'GET', // Adjust if API requires POST
+          });
+
+          if (response.ok) {
+              const result = await response.json(); // Assuming API returns JSON
+              responseBox.textContent = `Success: ${result.message || 'Message sent successfully!'}`;
+              responseBox.style.color = 'green';
+          } else {
+              responseBox.textContent = 'Failed to send the message. Please try again.';
+              responseBox.style.color = 'red';
+          }
+      } catch (error) {
+          console.error('Error sending message:', error);
+          responseBox.textContent = 'An error occurred while sending your message. Please try again later.';
+          responseBox.style.color = 'red';
+      }
+
+      // Show the response box
+      responseBox.style.display = 'block';
+
+      // Optionally reset the form
+      document.getElementById('enquiryForm').reset();
+  });
+});
